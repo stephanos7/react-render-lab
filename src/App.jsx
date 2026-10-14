@@ -1045,13 +1045,14 @@ function App() {
 
   // const handleUpdateTodoCompletion = useCallback((id) => {},[]);
 
-  const handleUpdateTodoCompletion = (id) => {
+  const handleUpdateTodoCompletion = useCallback((id) => {
     setTodos((currentTodos) =>
       currentTodos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
       )
     );
-  };
+  }
+  ,[]);
 
   return (
     <>
