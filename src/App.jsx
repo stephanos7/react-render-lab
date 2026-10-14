@@ -7,20 +7,20 @@ import {
 } from "react-router-dom";
 
 import Basic from "./experiments/Basic";
-// import Memo from "./experiments/Memo";
-// import MemoCallback from "./experiments/MemoCallback";
+import WithMemo from "./experiments/WithMemo";
+import WithMemoAndCallback from "./experiments/WithMemoAndCallback";
 import CodeViewer from "./components/CodeViewer";
 
 import basicSource from "./experiments/Basic.jsx?raw";
-// import memoSource from "./experiments/Memo.jsx?raw";
-// import callbackSource from "./experiments/MemoCallback.jsx?raw";
+import withMemoSource from "./experiments/withMemo.jsx?raw";
+import WithMemoAndCallbackSource from "./experiments/WithMemoAndCallback.jsx?raw";
 
 import "./App.css";
 
 const sourceByRoute = {
   "/": basicSource,
-  // "/memo": memoSource,
-  // "/memo-callback": callbackSource
+  "/with-memo": withMemoSource,
+  "/with-memo-and-callback": WithMemoAndCallbackSource
 };
 
 function ExperimentLayout() {
@@ -31,17 +31,19 @@ function ExperimentLayout() {
     <div className="app-layout">
       <nav className="navigation">
         <NavLink to="/">Basic</NavLink>
-        <NavLink to="/memo">Memo</NavLink>
-        <NavLink to="/memo-callback">Memo + Callback</NavLink>
+        <NavLink to="/with-memo">With Memo</NavLink>
+        <NavLink to="/with-memo-and-callback">Memo+Callback</NavLink>
       </nav>
 
       <main className="experiment-layout">
         <div className="experiment-panel">
           <Routes>
             <Route path="/" element={<Basic />} />
-            <Route path="/basic" element={<Basic />} />
-            <Route path="/memo" element={<p>Welcome to Memo</p>} />
-            <Route path="/memo-callback" element={<p>Welcome to Memo With Callback</p>} />
+            <Route path="/with-memo" element={<WithMemo />} />
+            <Route
+              path="/with-memo-and-callback"
+              element={<WithMemoAndCallback />}
+            />
           </Routes>
         </div>
 

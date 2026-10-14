@@ -1,8 +1,6 @@
-import  { useState, useCallback, memo } from 'react'
+import  { useState } from 'react'
 import { initialTodos } from "../initialTodos";
 import '../App.css'
-
-// const Todo = memo( function Todo({ todo, handleUpdateTodoCompletion }) {})
 
 const Todo = ({ todo, handleUpdateTodoCompletion }) => {
   return (
@@ -21,8 +19,6 @@ const Todo = ({ todo, handleUpdateTodoCompletion }) => {
 
 export default function Basic() {
   const [todos, setTodos] = useState(initialTodos);
-
-  // const handleUpdateTodoCompletion = useCallback((id) => {},[]);
 
   const handleUpdateTodoCompletion = (id) => {
     setTodos((currentTodos) =>
