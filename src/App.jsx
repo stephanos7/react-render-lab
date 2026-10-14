@@ -20,9 +20,6 @@ const Todo =({ todo, handleUpdateTodoCompletion }) => {
 
 function App() {
   const [todos, setTodos] = useState([
-    { id: 1, text: "Learn React", completed: false },
-    { id: 2, text: "Learn Vite", completed: false },
-    { id: 3, text: "Build a Todo App", completed: false },
       { id: 1, text: "Kenan FX", completed: false },
       { id: 2, text: "VLAN", completed: false },
       { id: 3, text: "LUSAS", completed: false },
