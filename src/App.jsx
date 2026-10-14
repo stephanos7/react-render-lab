@@ -1,54 +1,34 @@
-import  { useState, useCallback, memo } from 'react'
-import { initialTodos } from "./initialTodos";
-import './App.css'
+import { BrowserRouter, NavLink, Routes, Route } from "react-router-dom";
+import Basic from "./experiments/Basic";
+// import Memo from "./experiments/Memo";
+// import MemoCallback from "./experiments/MemoCallback";
+import "./App.css";
 
-// const Todo = memo( function Todo({ todo, handleUpdateTodoCompletion }) {})
-
-const Todo = memo( function Todo({ todo, handleUpdateTodoCompletion }) {
+export default function App() {
   return (
-      <div style={{ textAlign: "left" }} key={todo.id}>
-        <label>
-          <input
-            type="checkbox"
-            checked={todo.completed}
-            onChange={() => handleUpdateTodoCompletion(todo.id)}
-          />
-          {todo.text}
-        </label>
+    <BrowserRouter>
+      <div className="app-layout">
+        <nav className="navigation">
+          <NavLink to="/">Basic</NavLink>
+          <NavLink to="/memo">Memo</NavLink>
+          <NavLink to="/memo-callback">Memo + Callback</NavLink>
+        </nav>
+
+        <main className="experiment-layout">
+          <div className="experiment-panel">
+            <Routes>
+              <Route path="/" element={<Basic />} />
+              <Route path="/memo" element={<p>hello memo</p>} />
+              <Route path="/memo-callback" element={<p>hello memo and callback</p>} />
+            </Routes>
+          </div>
+
+          <aside className="code-panel">
+            <h2>Implementation</h2>
+            <p>Source code will appear here.</p>
+          </aside>
+        </main>
       </div>
+    </BrowserRouter>
   );
 }
-)
-
-function App() {
-  const [todos, setTodos] = useState(initialTodos);
-
-  // const handleUpdateTodoCompletion = useCallback((id) => {},[]);
-
-  const handleUpdateTodoCompletion = useCallback((id) => {
-    setTodos((currentTodos) =>
-      currentTodos.map((todo) =>
-        todo.id === id ? { ...todo, completed: !todo.completed } : todo
-      )
-    );
-  }
-  ,[]);
-
-  return (
-    <>
-      <section id="center">
-        <div>
-          {todos?.map((todo) => (
-            <Todo
-              key={todo.id}
-              todo={todo}
-              handleUpdateTodoCompletion={handleUpdateTodoCompletion}
-            />
-          ))}
-        </div>
-      </section>
-    </>
-  );
-}
-
-export default App
