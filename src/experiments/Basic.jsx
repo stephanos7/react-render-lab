@@ -7,7 +7,7 @@ import '../App.css'
 const Todo = ({ todo, handleUpdateTodoCompletion }) => {
   return (
       <div style={{ textAlign: "left" }} key={todo.id}>
-        <label>
+        <label style={{ display: "flex", alignItems: "center", gap: "6px" }}>
           <input
             type="checkbox"
             checked={todo.completed}
@@ -37,7 +37,7 @@ export default function Basic() {
     <>
       <section id="center">
         <h2>Todo</h2>
-        <div style={{width:"100%"}}>
+        <div style={{ width: "100%", display: "flex", flexDirection: "column", gap: "10px" }}>
           {todos?.map((todo) => (
             <Todo
               key={todo.id}
