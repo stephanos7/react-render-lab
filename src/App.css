@@ -1,3 +1,5 @@
+
+
 .app-layout {
   width: 100%;
   min-height: 100vh;
@@ -237,4 +239,45 @@
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+
+.code-panel h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.code-panel pre {
+  margin: 0;
+  padding: 20px;
+  max-width: 100%;
+  box-sizing: border-box;
+
+  border-radius: 8px;
+  text-align: left;
+
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  overflow-x: hidden;
+}
+
+.code-panel pre code {
+  display: block;
+  max-width: 100%;
+
+  font-family: "SFMono-Regular", Consolas, monospace;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+
+  white-space: pre-wrap !important;
+  overflow-wrap: anywhere;
+  word-break: normal;
+}
+
+.code-panel pre[class*="language-"],
+.code-panel pre[class*="language-"] code {
+  font-size: 12px !important;
+  line-height: 1.6;
 }
