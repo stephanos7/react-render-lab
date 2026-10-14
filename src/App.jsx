@@ -3,7 +3,7 @@ import './App.css'
 
 // const Todo = memo( function Todo({ todo, handleUpdateTodoCompletion }) {})
 
-const Todo =({ todo, handleUpdateTodoCompletion }) => {
+const Todo = memo( function Todo({ todo, handleUpdateTodoCompletion }) {
   return (
       <div style={{ textAlign: "left" }} key={todo.id}>
         <label>
@@ -17,6 +17,7 @@ const Todo =({ todo, handleUpdateTodoCompletion }) => {
       </div>
   );
 }
+)
 
 function App() {
   const [todos, setTodos] = useState([
