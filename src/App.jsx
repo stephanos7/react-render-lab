@@ -14,7 +14,7 @@ import WithCallbackOnly from "./experiments/WithCallbackOnly";
 import CodeViewer from "./components/CodeViewer";
 
 import basicSource from "./experiments/Basic.jsx?raw";
-import withMemoSource from "./experiments/withMemo.jsx?raw";
+import withMemoSource from "./experiments/WithMemo.jsx?raw";
 import WithMemoAndCallbackSource from "./experiments/WithMemoAndCallback.jsx?raw";
 import WithCallbackOnlySource from "./experiments/WithCallbackOnly.jsx?raw";
 
