@@ -13,6 +13,8 @@ import WithMemo from "./experiments/WithMemo";
 import SparklineMemo from "./experiments/SparklineMemo";
 
 import WithMemoAndCallback from "./experiments/WithMemoAndCallback";
+import SparklineMemoCallback from "./experiments/SparklineMemoCallback";
+
 import WithCallbackOnly from "./experiments/WithCallbackOnly";
 import CodeViewer from "./components/CodeViewer";
 
@@ -23,6 +25,8 @@ import withMemoSource from "./experiments/WithMemo.jsx?raw";
 import sparklineMemoSource from "./experiments/SparklineMemo.jsx?raw";
 
 import WithMemoAndCallbackSource from "./experiments/WithMemoAndCallback.jsx?raw";
+import sparklineMemoCallbackSource from "./experiments/SparklineMemoCallback.jsx?raw"; 
+
 import WithCallbackOnlySource from "./experiments/WithCallbackOnly.jsx?raw";
 
 import "./App.css";
@@ -35,7 +39,9 @@ const sourceByRoute = {
   "/sparkline-memo": sparklineMemoSource,
 
   "/with-callback-only": WithCallbackOnlySource,
-  "/with-memo-and-callback": WithMemoAndCallbackSource
+
+  "/with-memo-and-callback": WithMemoAndCallbackSource,
+  "/sparkline-memo-callback": sparklineMemoCallbackSource
 };
 
 function ExperimentLayout() {
@@ -51,6 +57,9 @@ function ExperimentLayout() {
         <NavLink to="/with-memo-and-callback">Memo+Callback</NavLink>
         <NavLink to="/sparkline-basic">Sparkline Basic</NavLink>
         <NavLink to="/sparkline-memo">Sparkline Memo</NavLink>
+        <NavLink to="/sparkline-memo-callback">
+          Sparkline Memo + Callback
+        </NavLink>
       </nav>
 
       <main className="experiment-layout">
@@ -65,6 +74,10 @@ function ExperimentLayout() {
             />
             <Route path="/sparkline-basic" element={<SparklineBasic />} />
             <Route path="/sparkline-memo" element={<SparklineMemo />} />
+            <Route
+              path="/sparkline-memo-callback"
+              element={<SparklineMemoCallback />}
+            />
           </Routes>
         </div>
 
