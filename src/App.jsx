@@ -9,17 +9,21 @@ import {
 import Basic from "./experiments/Basic";
 import WithMemo from "./experiments/WithMemo";
 import WithMemoAndCallback from "./experiments/WithMemoAndCallback";
+import WithCallbackOnly from "./experiments/WithCallbackOnly";
+
 import CodeViewer from "./components/CodeViewer";
 
 import basicSource from "./experiments/Basic.jsx?raw";
 import withMemoSource from "./experiments/withMemo.jsx?raw";
 import WithMemoAndCallbackSource from "./experiments/WithMemoAndCallback.jsx?raw";
+import WithCallbackOnlySource from "./experiments/WithCallbackOnly.jsx?raw";
 
 import "./App.css";
 
 const sourceByRoute = {
   "/": basicSource,
   "/with-memo": withMemoSource,
+  "/with-callback-only":WithCallbackOnlySource,
   "/with-memo-and-callback": WithMemoAndCallbackSource
 };
 
@@ -32,6 +36,8 @@ function ExperimentLayout() {
       <nav className="navigation">
         <NavLink to="/">Basic</NavLink>
         <NavLink to="/with-memo">With Memo</NavLink>
+        <NavLink to="/with-callback-only">Callback Only</NavLink>
+
         <NavLink to="/with-memo-and-callback">Memo+Callback</NavLink>
       </nav>
 
@@ -44,6 +50,7 @@ function ExperimentLayout() {
               path="/with-memo-and-callback"
               element={<WithMemoAndCallback />}
             />
+            <Route path="/with-callback-only" element={<WithCallbackOnly />} />
           </Routes>
         </div>
 
