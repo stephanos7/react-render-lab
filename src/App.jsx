@@ -7,13 +7,16 @@ import {
 } from "react-router-dom";
 
 import Basic from "./experiments/Basic";
+import SparklineBasic from "./experiments/SparklineBasic";
+
 import WithMemo from "./experiments/WithMemo";
 import WithMemoAndCallback from "./experiments/WithMemoAndCallback";
 import WithCallbackOnly from "./experiments/WithCallbackOnly";
-
 import CodeViewer from "./components/CodeViewer";
 
 import basicSource from "./experiments/Basic.jsx?raw";
+import sparklineBasicSource from "./experiments/SparklineBasic.jsx?raw";
+
 import withMemoSource from "./experiments/WithMemo.jsx?raw";
 import WithMemoAndCallbackSource from "./experiments/WithMemoAndCallback.jsx?raw";
 import WithCallbackOnlySource from "./experiments/WithCallbackOnly.jsx?raw";
@@ -22,8 +25,10 @@ import "./App.css";
 
 const sourceByRoute = {
   "/": basicSource,
+  "/sparkline-basic": sparklineBasicSource,
+
   "/with-memo": withMemoSource,
-  "/with-callback-only":WithCallbackOnlySource,
+  "/with-callback-only": WithCallbackOnlySource,
   "/with-memo-and-callback": WithMemoAndCallbackSource
 };
 
@@ -38,6 +43,7 @@ function ExperimentLayout() {
         <NavLink to="/with-memo">With Memo</NavLink>
         <NavLink to="/with-callback-only">Callback Only</NavLink>
         <NavLink to="/with-memo-and-callback">Memo+Callback</NavLink>
+        <NavLink to="/sparkline-basic">Sparkline Basic</NavLink>
       </nav>
 
       <main className="experiment-layout">
@@ -45,11 +51,12 @@ function ExperimentLayout() {
           <Routes>
             <Route path="/" element={<Basic />} />
             <Route path="/with-memo" element={<WithMemo />} />
+            <Route path="/with-callback-only" element={<WithCallbackOnly />} />
             <Route
               path="/with-memo-and-callback"
               element={<WithMemoAndCallback />}
             />
-            <Route path="/with-callback-only" element={<WithCallbackOnly />} />
+            <Route path="/sparkline-basic" element={<SparklineBasic />} />
           </Routes>
         </div>
 
