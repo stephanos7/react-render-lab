@@ -37,7 +37,6 @@ function ExperimentLayout() {
         <NavLink to="/">Basic</NavLink>
         <NavLink to="/with-memo">With Memo</NavLink>
         <NavLink to="/with-callback-only">Callback Only</NavLink>
-
         <NavLink to="/with-memo-and-callback">Memo+Callback</NavLink>
       </nav>
 
